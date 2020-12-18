@@ -12,4 +12,12 @@ class Admin extends CI_Controller
         $this->load->view('templateBE/gejala.php');
         $this->load->view('templateBE/footer.php');
     }
+
+    public function tambahGejala()
+    {
+        $this->load->view('templateBE/header.php');
+        $this->load->view('templateBE/sidebar.php');
+        $this->load->view('templateBE/gejala.php');
+        $this->load->view('templateBE/footer.php');
+    }
 }
