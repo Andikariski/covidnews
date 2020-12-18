@@ -541,9 +541,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?= base_url('masuk/logout') ?>" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
-                        <p>Informational</p>
+                        <p>Logout</p>
                     </a>
                 </li>
             </ul>

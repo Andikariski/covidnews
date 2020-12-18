@@ -45,9 +45,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url('masuk') ?>">Masuk</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin') ?>">Admin</a>
-                    </li>
+                   
                 </ul>
             </div>
         </div>

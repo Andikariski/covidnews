@@ -1,4 +1,6 @@
-<section class="content container">
+<br>
+<div class="content-wrapper">
+<section class="content header">
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="card">
@@ -62,4 +64,5 @@
         <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
+</div>
 </div>
