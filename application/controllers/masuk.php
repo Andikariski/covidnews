@@ -27,20 +27,20 @@ class Masuk extends CI_Controller
         $password = $this->input->post('password');
 
         $user = $this->db->get_where('tbl_login', ['email' => $email])->row_array();
-        
+
         if ($user) {
-                if (password_verify($password, $user['password'])) {
-                    $data = [
-                        'email' => $user['email'],
-                        'nama_lengkap' => $user['nama_lengkap']
-                    ];
-                    $this->session->set_userdata($data);
-                    redirect('Admin');
-                } else {
-                    //Password salah
-                    $this->session->set_flashdata('message', '<div class="form-group"> <div class="alert-danger" role="alert"><center>Password salah!</center></div></div>');
-                    redirect('masuk');
-                }
+            if (password_verify($password, $user['password'])) {
+                $data = [
+                    'email' => $user['email'],
+                    'nama_lengkap' => $user['nama_lengkap']
+                ];
+                $this->session->set_userdata($data);
+                redirect('Dashboard');
+            } else {
+                //Password salah
+                $this->session->set_flashdata('message', '<div class="form-group"> <div class="alert-danger" role="alert"><center>Password salah!</center></div></div>');
+                redirect('masuk');
+            }
         } else {
             $this->session->set_flashdata('message', '<div class="form-group"> <div class="alert-danger" role="alert"><center>Username tidak terdaftar!</center></div></div>');
             redirect('masuk');

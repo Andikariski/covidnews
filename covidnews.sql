@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2020 at 04:23 AM
+-- Generation Time: Dec 20, 2020 at 04:24 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -33,6 +33,13 @@ CREATE TABLE `tbl_berita` (
   `isi_berita` varchar(500) NOT NULL,
   `tanggal_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_berita`
+--
+
+INSERT INTO `tbl_berita` (`id_berita`, `judul_berita`, `isi_berita`, `tanggal_update`) VALUES
+(5, 'Vaksin Covid-19 Tiba', 'Tanggal 20 Desember Indonesia menerima vaksin covid-19 dari amerika', '2020-12-20 15:23:49');
 
 -- --------------------------------------------------------
 
@@ -64,8 +71,7 @@ CREATE TABLE `tbl_gejala` (
 --
 
 INSERT INTO `tbl_gejala` (`id_gejala`, `gejala`, `deskripsi`, `gambar`) VALUES
-(8, 'Batuk', 'Batuk banget', 'batuk.png'),
-(9, 'Pusing', 'Pusing banget nich habis kena hujan', 'covid.jpg');
+(25, 'Batuk berdahak banyak', 'kepala sakit kunang kunang', 'sakittenggorokan.png');
 
 -- --------------------------------------------------------
 
@@ -89,9 +95,17 @@ CREATE TABLE `tbl_kasus` (
 
 CREATE TABLE `tbl_login` (
   `id_user` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `nama_lengkap` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_login`
+--
+
+INSERT INTO `tbl_login` (`id_user`, `nama_lengkap`, `email`, `password`) VALUES
+(4, 'Andika Riski', 'dika@gmail.com', '$2y$10$mw5tNcgSByMjby7XRbmhCujacJUaQ.5QvVrovDeEwiUt3/xc7V9wu');
 
 -- --------------------------------------------------------
 
@@ -101,9 +115,17 @@ CREATE TABLE `tbl_login` (
 
 CREATE TABLE `tbl_pencegahan` (
   `id_pencegahan` int(11) NOT NULL,
-  `gambar` varchar(500) NOT NULL,
-  `deskripsi` varchar(500) NOT NULL
+  `cara_pencegahan` varchar(500) NOT NULL,
+  `deskripsi` varchar(500) NOT NULL,
+  `gambar` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_pencegahan`
+--
+
+INSERT INTO `tbl_pencegahan` (`id_pencegahan`, `cara_pencegahan`, `deskripsi`, `gambar`) VALUES
+(3, 'Cuci tangan ', 'Rajin mencuci tangan dapat mengurangi dampak covid', 'cuci_tangan.png');
 
 -- --------------------------------------------------------
 
@@ -189,7 +211,7 @@ ALTER TABLE `tbl_saran`
 -- AUTO_INCREMENT for table `tbl_berita`
 --
 ALTER TABLE `tbl_berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_checkup`
@@ -201,7 +223,7 @@ ALTER TABLE `tbl_checkup`
 -- AUTO_INCREMENT for table `tbl_gejala`
 --
 ALTER TABLE `tbl_gejala`
-  MODIFY `id_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_kasus`
@@ -213,13 +235,13 @@ ALTER TABLE `tbl_kasus`
 -- AUTO_INCREMENT for table `tbl_login`
 --
 ALTER TABLE `tbl_login`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_pencegahan`
 --
 ALTER TABLE `tbl_pencegahan`
-  MODIFY `id_pencegahan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pencegahan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_rsrujukan`

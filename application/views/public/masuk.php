@@ -1,4 +1,4 @@
-    <?= $this->session->flashdata('message') ?>
+<?= $this->session->flashdata('message') ?>
 <div class="card shadow-sm container mt-5 mb-5">
     <div class="container mt-5 mb-5">
         <div class="row mx-auto my-auto justify-content-between">

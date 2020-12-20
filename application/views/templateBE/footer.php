@@ -32,23 +32,45 @@
 <!-- JQVMap -->
 <script src="./assets/adminLTE/plugins/jqvmap/jquery.vmap.min.js"></script>
 <script src="./assets/adminLTE/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+
 <!-- jQuery Knob Chart -->
-<script src="./assets/adminLTE/plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="./assets/adminLTE/plugins/moment/moment.min.js"></script>
-<script src="./assets/adminLTE/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="./assets/adminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="./assets/adminLTE/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="./assets/adminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+
+<script src="./assets/adminLTE/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./assets/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="./assets/adminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="./assets/adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="./assets/adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="./assets/adminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
-<script src="./assets/adminLTE/dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="./assets/adminLTE/dist/js/pages/dashboard.js"></script>
+<script src="./assets/adminLTE/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="./assets/adminLTE/dist/js/demo.js"></script>
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true,
+            "autoWidth": false,
+        });
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    // custome field nama
+    $('.custom-file-input').on('change', function() {
+        let fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+    });
+</script>
 </body>
 
 </html>
