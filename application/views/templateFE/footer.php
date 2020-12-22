@@ -6,9 +6,7 @@
                 <div class="footer-about">
                     <p class="footer-title"></p>
                     <p>HOTLINE COVID-19 KEMENKES RI</p>
-                    <p>Tlp. 199 ext 9</p>
-                    <p>WEBSITE MITIGASI COVID-19 UMY</p>
-                    <a class="text-white" href="">Covid-19.umy.ac.id</a>
+                    <p>Tlp. 199345229</p>
                 </div>
             </div>
             <div class="col-md-4 col-md-4">
@@ -34,15 +32,10 @@
                         <td class="footer-about">Humas</td>
                         <td class="footer-about">: +62 274 387656 Ext. 115</td>
                     </tr>
-                    <tr>
-                        <td class="footer-about">Surel</td>
-                        <td class="footer-about">: bhp@umy.ac.id</td>
-                    </tr>
                 </table>
             </div>
             <div class="col-md-4 col-md-4">
                 <p class="footer-title">alamat</p>
-                <p class="footer-about">Kampus Terpadu UMY</p>
                 <p class="footer-about">Jl Brawijaya</p>
                 <p class="footer-about">Kasihan, Bantul</p>
                 <p class="footer-about">Yogyakarta 55183</p>
@@ -54,7 +47,7 @@
 <!-- Copyright -->
 <div class="footer-copyright text-center py-3 text-primary">Copyright &copy;<script>
         document.write(new Date().getFullYear());
-    </script> Smatecin All rights reserved
+    </script> pemrogramman web dinamis
 </div>
 <!-- Copyright -->
 <!-- footer ends -->

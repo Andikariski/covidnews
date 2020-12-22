@@ -19,13 +19,28 @@
 <!-- call to action  -->
 <section class="section-margin">
     <div class="container">
-        <div>
-            <div class="p3 mx-3">
-                <div class="card shadow p-5">
-                    <h2 data-aos="zoom-in" class="section-intro__title text-center text-dark">Berita terbaru</h2>
+        <h2 data-aos="zoom-in" class="section-intro__title text-center text-dark">Berita terbaru</h2>
+        <div class="row">
 
+            <?php
+            $no = 1;
+            foreach ($tbl_berita as $u) { ?>
+                <div class="col-md-4 col-sm-12 mb-3">
+
+                    <div class="card">
+                        <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark"><?= $u->judul_berita ?></h5>
+                            <p class="card-text"><?= word_limiter($u->isi_berita, 20) ?></p>
+                            <button type="button" class="btn btn-primary">Selengkapnya</button>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">sejak : <?= $u->tanggal_update ?></small>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            <?php } ?>
+
         </div>
     </div>
     </div>

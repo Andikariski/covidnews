@@ -3,9 +3,9 @@
 @import "./variables";
 
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "dark": $dark,
+	"primary": $primary,
+	"secondary": $secondary,
+	"dark": $dark,
 );
 
 // // bootstrap required
@@ -48,141 +48,141 @@ $theme-colors: (
 @import "./mixins";
 
 body {
-  font-family: "Mulish", sans-serif;
+	font-family: "Mulish", sans-serif;
 }
 .custom-navbar {
-  .navbar-nav {
-    .nav-item {
-      margin-right: 1.2em;
-    }
-    .active {
-      font-weight: 700;
-      color: #1f1534;
-    }
-  }
+	.navbar-nav {
+		.nav-item {
+			margin-right: 1.2em;
+		}
+		.active {
+			font-weight: 700;
+			color: #1f1534;
+		}
+	}
 }
 
 .section-title {
-  text-align: center;
-  font-weight: 700;
+	text-align: center;
+	font-weight: 700;
 }
 .section-line {
-  width: 60px;
-  height: 2px;
-  background: black;
-  margin: 30px auto;
-  display: block;
+	width: 60px;
+	height: 2px;
+	background: black;
+	margin: 30px auto;
+	display: block;
 }
 .service-card {
-  padding-top: 3em;
-  padding-bottom: 2em;
-  margin: 10px auto;
-  border: none;
-  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.7);
-  border-radius: 20px;
-  &__img {
-    padding: 1rem;
-  }
-  .card-title {
-    font-weight: bold;
-  }
-  .card-text {
-    color: $secondary;
-  }
+	padding-top: 3em;
+	padding-bottom: 2em;
+	margin: 10px auto;
+	border: none;
+	box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.7);
+	border-radius: 20px;
+	&__img {
+		padding: 1rem;
+	}
+	.card-title {
+		font-weight: bold;
+	}
+	.card-text {
+		color: $secondary;
+	}
 }
 .pencegahan-covid-card {
-  // min-height: 500px;
-  margin: 10px auto;
-  border: none;
-  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.7);
-  border-radius: 20px;
-  &__img {
-    padding: 1rem;
-  }
-  .card-title {
-    font-weight: bold;
-  }
-  .card-text {
-    color: $secondary;
-  }
+	// min-height: 500px;
+	margin: 10px auto;
+	border: none;
+	box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.7);
+	border-radius: 20px;
+	&__img {
+		padding: 1rem;
+	}
+	.card-title {
+		font-weight: bold;
+	}
+	.card-text {
+		color: $secondary;
+	}
 }
 
 .feature-detail {
-  margin-top: 2em;
+	margin-top: 2em;
 }
 .feature-line {
-  display: block;
-  width: 50px;
-  height: 2px;
-  background: black;
-  margin: 1.5em auto;
-  @include tablet {
-    margin: 1.5em 0em;
-  }
+	display: block;
+	width: 50px;
+	height: 2px;
+	background: black;
+	margin: 1.5em auto;
+	@include tablet {
+		margin: 1.5em 0em;
+	}
 }
 
 section {
-  margin: 9em auto;
+	margin: 9em auto;
 }
 
 .blog-card {
-  border: none;
-  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.7);
-  border-radius: 20px;
-  min-height: 400px;
-  margin: 2em auto;
+	border: none;
+	box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.7);
+	border-radius: 20px;
+	min-height: 400px;
+	margin: 2em auto;
 
-  .card-title {
-    font-weight: bold;
-  }
-  .card-text {
-    color: $secondary;
-  }
+	.card-title {
+		font-weight: bold;
+	}
+	.card-text {
+		color: $secondary;
+	}
 }
 
 footer {
-  background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
-  padding: 4em 0em;
+	background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+	padding: 4em 0em;
 
-  .footer-about {
-    color: rgba($color: #fff, $alpha: 0.7);
-  }
+	.footer-about {
+		color: rgba($color: #fff, $alpha: 0.7);
+	}
 
-  .footer-title {
-    font-weight: bold;
-    margin-bottom: 2em;
-    color: white;
-    font-size: 20px;
-  }
-  .footer-content {
-    margin-bottom: 1.5em;
-    color: white;
-  }
+	.footer-title {
+		font-weight: bold;
+		margin-bottom: 2em;
+		color: white;
+		font-size: 20px;
+	}
+	.footer-content {
+		margin-bottom: 1.5em;
+		color: white;
+	}
 
-  ul {
-    list-style: none;
-    padding: 0px;
-    li {
-      margin-bottom: 15px;
-      a {
-        color: rgba($color: #fff, $alpha: 0.7);
+	ul {
+		list-style: none;
+		padding: 0px;
+		li {
+			margin-bottom: 15px;
+			a {
+				color: rgba($color: #fff, $alpha: 0.7);
 
-        &:hover {
-          color: white;
-        }
-      }
-    }
-  }
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
 }
 // kasus.php
 .section-margin {
-  .row h5,
-  h4,
-  h2 {
-    color: white;
-  }
-  .box {
-    padding: 30px 40px;
-    border-radius: 4px;
-  }
+	.row h5,
+	h4,
+	h2 {
+		color: white;
+	}
+	.box {
+		padding: 30px 40px;
+		border-radius: 4px;
+	}
 }

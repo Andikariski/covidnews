@@ -1,3 +1,25 @@
+<?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+if (isset($_GET['country']) && !empty($_GET['country'])) {
+
+    curl_setopt($ch, CURLOPT_URL, 'https://covid19.mathdro.id/api/countries/' . urlencode($_GET['country']));
+    $result = curl_exec($ch);
+    $data = json_decode($result, true);
+
+    curl_setopt($ch, CURLOPT_URL, 'https://covid19.mathdro.id/api');
+    $MainApi = curl_exec($ch);
+    $totalStatistics = json_decode($MainApi, true);
+}
+
+curl_setopt($ch, CURLOPT_URL, 'https://covid19.mathdro.id/api/countries/ID');
+$resultId = curl_exec($ch);
+$dataCovidId = json_decode($resultId, true);
+
+?>
+
 <div class="jumbotron bg-white">
     <div class="container">
         <div class="row justify-content-between align-items-center">
@@ -77,56 +99,42 @@
             <div class="col-md-12 mt-3" data-aos="zoom-in">
                 <div class="bg box text-black" style="background-color: rgb(65 ,47 ,179);">
                     <div class="row">
-                        <div class="col-md-3" data-aos="fade-down">
+                        <div class="col-md-6" data-aos="fade-down">
                             <h2>INDONESIA</h2>
-
-                            <h5>Positif : <span class="pos-id"></span></h5>
-                            <h5>Meninggal : <span class="meninggal-id"></span></h5>
-                            <h5>Sembuh : <span class="sembuh-id"></h5>
+                            <?php if (!empty($dataCovidId['confirmed']) || empty($dataCovidId['confirmed'])) : ?>
+                                <h5>Terinfeksi : <span class="pos-id"><?php echo number_format($dataCovidId['confirmed']['value']) ?></span></h5>
+                                <h5>Meninggal : <span class="meninggal-id"><?php echo number_format($dataCovidId['deaths']['value']) ?></span></h5>
+                                <h5>Sembuh : <span class="sembuh-id"><?php echo number_format($dataCovidId['recovered']['value']) ?></h5>
+                            <?php endif; ?>
 
                         </div>
-                        <div class="col-md-4" data-aos="zoom-in">
+                        <div class="col-md-6" data-aos="zoom-in">
                             <img src="./assets/assetsimg/indonesia.svg" style="width: 150px">
-                        </div>
-                        <div class="col-md-5" data-aos="fade-down">
-                            <h2>Terkini</h2>
-                            <h5>Positif : <span class="pos-idtoday"></span></h5>
-                            <h5>Meninggal : <span class="meninggal-idtoday"></span></h5>
-                            <h5>Sembuh : <span class="sembuh-idtoday"></h5>
-                            <h6 style="color: white">Update <span class="timeindo"> </h6>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="table-wrapper-scroll-y my-custom-scrollbar" data-aos="zoom-in">
-            <div class="card mt-3">
-                <div class="card-header  text-white" data-aos="zoom-in" style="background-color: rgb(65 ,47 ,179);">
-                    <b>Data Kasus Corona Virus diIndonesia Bedasarkan Provinsi</b>
-                </div>
-                <div class="card-body">
-                    <table id="example" class="table table-striped table-bordered" cellspacing="0" style="width:100%" data-aos="zoom-in">
+        <div class="container bg-dark">
+            <div class="jumbotron mt-3 bg-dark">
+                <h1 class="mb-2 text-primary">Cek Statistik Covid-19</h1>
+                <form class="form-group" method="get">
+                    <input class="form-control" type="text" name="country" placeholder="masukkan nama negara">
+                    <button class="btn btn-primary float-right mt-3" type="submit">Lihat Kasus</button>
+                </form>
 
-                        <thead>
-                            <th>No.</th>
-                            <th>Nama Provinsi</th>
-                            <th>Positif</th>
-                            <th>Sembuh</th>
-                            <th>Meninggal</th>
-                        </thead>
-                        <tbody id="table-data">
-                            <tr>
-                                <td><img width="50px" src="./assets/assetsimg/Preloader.svg"></td>
-                                <td><img width="50px" src="./assets/assetsimg/Preloader.svg"></td>
-                                <td><img width="50px" src="./assets/assetsimg/Preloader.svg"></td>
-                                <td><img width="50px" src="./assets/assetsimg/Preloader.svg"></td>
-                                <td><img width="50px" src="./assets/assetsimg/Preloader.svg"></td>
-                            </tr>
+                <?php if (!empty($data['confirmed'])) : ?>
+                    <h4>Statistik <?php echo htmlspecialchars($_GET['country'], ENT_QUOTES); ?></h4>
+                    <ul>
+                        <li>Terinfeksi - <?php echo number_format($data['confirmed']['value']) ?></li>
+                        <li>Sembuh - <?php echo number_format($data['recovered']['value']) ?></li>
+                        <li>Meninggal(s) - <?php echo number_format($data['deaths']['value']) ?></li>
+                        <li>Terakhir Updated @ <?php echo $data['lastUpdate'] ?></li>
+                    </ul>
+                    <hr>
+                <?php endif; ?>
 
-                        </tbody>
-                    </table>
-                </div>
+                <!-- <img class='mt-2 text-center' src='https://covid19.mathdro.id/api/og' height="300px" width="1050px" /> -->
             </div>
         </div>
 </section>

@@ -9,6 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/main.css?v=2" />
     <link rel="stylesheet" href="./assets/css/style.css?v=2" />
+    <link rel="stylesheet" href="./assets/css/custom-css.css?v=2" />
     <!-- <link rel="stylesheet" href="../css/style.css?v=2"> -->
     <!-- <link rel="stylesheet" href="css/main.css" /> -->
 </head>
@@ -45,7 +46,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url('masuk') ?>">Masuk</a>
                     </li>
-                   
+
                 </ul>
             </div>
         </div>

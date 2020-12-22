@@ -1,6 +1,6 @@
 <?= $this->session->flashdata('message') ?>
 <div class="card shadow-sm container mt-5 mb-5">
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5 container-login">
         <div class="row mx-auto my-auto justify-content-between">
             <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="20">
                 <div class="">
