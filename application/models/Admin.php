@@ -84,4 +84,28 @@ class Admin extends CI_model
         $this->db->where('id_berita', $id);
         $this->db->update('tbl_berita', $data);
     }
+
+    // function count data akun yang terdaftar
+    public function CountDataPencegahan()
+    {
+        $sql = "SELECT Count(id_pencegahan) as jumlahPencegahan from tbl_pencegahan";
+        $result = $this->db->query($sql);
+        return $result->row_array();
+    }
+
+    // function count data akun yang terdaftar
+    public function CountDataGejala()
+    {
+        $sql = "SELECT Count(id_gejala) as jumlahGejala from tbl_gejala";
+        $result = $this->db->query($sql);
+        return $result->row_array();
+    }
+
+    // function count data akun yang terdaftar
+    public function CountDataBerita()
+    {
+        $sql = "SELECT Count(id_berita) as jumlahBerita from tbl_berita";
+        $result = $this->db->query($sql);
+        return $result->row_array();
+    }
 }
